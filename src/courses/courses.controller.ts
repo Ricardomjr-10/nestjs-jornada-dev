@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('courses')
+@Controller()
 export class CoursesController {
-  @Get() // decorator do controller
+  @Get('courses') // rota alinhada com o paramentro list
   // metodo findAll
   findAll() {
     return 'Listagem de cursos';
