@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Body, Post } from '@nestjs/common';
+import { Controller, Get, Param, Body, Post, HttpCode } from '@nestjs/common';
 
 @Controller('courses')
 export class CoursesController {
@@ -14,6 +14,7 @@ export class CoursesController {
   }
 
   @Post()
+  @HttpCode(204)
   create(@Body('name') body) {
     return body;
   }
