@@ -1,10 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
-@Controller()
+@Controller('courses')
 export class CoursesController {
-  @Get('courses') // rota alinhada com o paramentro list
+  @Get() // rota alinhada com o paramentro list
   // metodo findAll
   findAll() {
     return 'Listagem de cursos';
+  }
+
+  @Get(':id')
+  findOne(@Param() params) {
+    return `Curso #${params.id}`;
   }
 }
