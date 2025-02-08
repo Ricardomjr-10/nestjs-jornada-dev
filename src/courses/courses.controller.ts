@@ -1,7 +1,21 @@
-import { Body, Controller, Get, Param, Post, HttpCode, HttpStatus, Res, Patch, Delete } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  HttpCode,
+  HttpStatus,
+  Res,
+  Patch,
+  Delete,
+} from '@nestjs/common';
+import { CourseService } from './courses.service';
 
 @Controller('courses')
 export class CoursesController {
+  constructor(private readonly coursesService: CourseService) {}
+
   @Get() // rota alinhada com o paramentro list
   // metodo findAll
   findAll(@Res() response) {

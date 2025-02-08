@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-@Injectable()
-export class CourseService {}
+@Injectable() //provider
+export class CourseService {
+  private courses = [];
+}
