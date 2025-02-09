@@ -4,9 +4,6 @@ import {
   Get,
   Param,
   Post,
-  HttpCode,
-  HttpStatus,
-  Res,
   Patch,
   Delete,
 } from '@nestjs/common';
@@ -18,7 +15,7 @@ export class CoursesController {
 
   @Get() // rota alinhada com o paramentro list
   // metodo findAll
-  findAll(@Res() response) {
+  findAll() {
     return this.coursesService.findAll();
   }
 
